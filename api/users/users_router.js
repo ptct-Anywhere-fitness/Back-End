@@ -11,4 +11,22 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/:id", async (req, res) => {
+  const id = req.params.id;
+  await Users.getById(id).then((user) => {
+    res.status(200).json(user);
+  });
+});
+
+router.post("/", async (req, res) => {
+  const newUser = req.body;
+  await Users.create(newUser)
+    .then((user) => {
+      res.status(201).json(user);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
