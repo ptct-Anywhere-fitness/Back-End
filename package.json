@@ -1,0 +1,31 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptct-Anywhere-fitness/Back-End.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ptct-Anywhere-fitness/Back-End/issues"
+  },
+  "homepage": "https://github.com/ptct-Anywhere-fitness/Back-End#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "knex": "^0.95.14",
+    "sqlite3": "^5.0.2"
+  }
+}
