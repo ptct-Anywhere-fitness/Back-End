@@ -34,20 +34,8 @@ const createClass = async (c) => {
   return getClassById(classData);
 };
 
-const updateClass = async (
-  id,
-  { name, type, start_time, date, duration, intensity_level, locaion, max_size }
-) => {
-  await db("classes").where({ id }).insert({
-    name,
-    type,
-    start_time,
-    date,
-    duration,
-    intensity_level,
-    locaion,
-    max_size,
-  });
+const updateClass = async (id, changes) => {
+  await db("classes").where("id", id).update(changes);
   return getClassById(id);
 };
 

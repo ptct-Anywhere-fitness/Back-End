@@ -38,9 +38,17 @@ router.post("/", (req, res) => {
     });
 });
 
-router.put("/:id", async (req, res) => {
-  const classData = await Classes.updateClass(req, params.id, req.body);
-  res.status(201).json(classData);
+router.put("/:id", (req, res) => {
+  console.log("params and body: ", req.params.id, req.body);
+  Classes.updateClass(req.params.id, req.body)
+    .then((id) => {
+      Classes.getClassById(id).then((c) => {
+        res.status(201).json({ message: "class updated!", c });
+      });
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 router.delete("/:id", async (req, res) => {
