@@ -11,14 +11,6 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
-  const id = req.params.id;
-  Classes.getRegistrationsByUserId(id).then((c) => {
-    console.log(c);
-    res.status(200).json(c);
-  });
-});
-
 router.get("/class/:id", (req, res) => {
   const id = req.params.id;
   Classes.getClassById(id).then((c) => {
