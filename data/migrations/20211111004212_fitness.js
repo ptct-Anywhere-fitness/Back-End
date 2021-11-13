@@ -11,6 +11,7 @@ exports.up = function (knex) {
       tbl
         .integer("role")
         .unsigned()
+        .notNullable()
         .references("roles.id")
         .onDelete("RESTRICT")
         .onUpdate("CASCADE");
@@ -25,7 +26,11 @@ exports.up = function (knex) {
       tbl.string("intensity_level");
       tbl.string("location");
       tbl.integer("max_size").notNullable();
-      tbl.integer("instructor_id").unsigned().references("users.id");
+      tbl
+        .integer("instructor_id")
+        .unsigned()
+        .notNullable()
+        .references("users.id");
     })
     .createTable("class_clients", (tbl) => {
       tbl.integer("class_id").unsigned().references("classes.id");
