@@ -20,7 +20,7 @@ When you send .post or .put to create or edit a recipe, please make sure you are
 | :----: | :----: | ------------------- | ---------------------- |
 |  Read  |  GET   | /api/users          | get all users          |
 |  Read  |  GET   | /api/users/:user_id | get one user by its id |
-| Create |  POST  | /api/users          | create new class       |
+| Create |  POST  | /api/users          | create new user        |
 
 ### Class Schema
 
@@ -42,9 +42,11 @@ When you send .post or .put to create or edit a recipe, please make sure you are
 }
 ```
 
-|  CRUD  | METHOD | ROUTE                  | Description             |
-| :----: | :----: | ---------------------- | ----------------------- |
-|  Read  |  GET   | /api/classes           | get all classes         |
-|  Read  |  GET   | /api/classes/:class_id | get one class by its id |
-| Create |  POST  | /api/classes           | create new class        |
-| Update |  PUT   | /api/classes/:class_id | edit user information   |
+|  CRUD  | METHOD | ROUTE                        | Description               |
+| :----: | :----: | ---------------------------- | ------------------------- |
+|  Read  |  GET   | /api/classes                 | get all classes           |
+|  Read  |  GET   | /api/classes/class/:class_id | get one class by its id   |
+|  Read  |  GET   | /api/classes/:class_id       | get one class for clients |
+| Create |  POST  | /api/classes                 | create new class          |
+| Update |  PUT   | /api/classes/:class_id       | edit user information     |
+| Delete | Delete | /api/classes/:class_id       | delete user information   |
